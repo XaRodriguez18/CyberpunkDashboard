@@ -11,6 +11,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  schemas  = ["public"]
 }
 
 model Task {
@@ -18,4 +19,6 @@ model Task {
   title     String  
   completed Boolean   @default(false)
   createdAt DateTime  @default(now())
+
+  @@schema("public")
 }
